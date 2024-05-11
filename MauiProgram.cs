@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using GmoUIMaui.View;
+using GmoUIMaui.ViewModel;
+using Microsoft.Extensions.Logging;
 
 namespace GmoUIMaui;
 
@@ -18,6 +20,12 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
+        
+        // views
+        builder.Services.AddSingleton<MainMenuView>();
+        
+        // view models
+        builder.Services.AddSingleton<MainMenuViewModel>();
 
         return builder.Build();
     }

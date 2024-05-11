@@ -3,13 +3,13 @@
     x:Class="GmoUIMaui.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:GmoUIMaui"
+    xmlns:view="clr-namespace:GmoUIMaui.View"
     Shell.FlyoutBehavior="Disabled"
     Title="GmoUIMaui">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate view:MainMenuView}"
         Route="MainPage" />
 
 </Shell>
