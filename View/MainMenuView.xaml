@@ -7,7 +7,7 @@
              x:Class="GmoUIMaui.View.MainMenuView"
              x:DataType="vm:MainMenuViewModel"
              Title="{Binding Title}"
-             x:Name="MainMenuView">
+             x:Name="MainMenuContentPage">
 
     <Grid RowDefinitions="Auto, *, Auto, Auto"
           ColumnDefinitions="*"
@@ -68,7 +68,7 @@
                     TextColor="{Binding MyStyle.ButtonTextColor}">
                 <Button.ImageSource>
                     <FontImageSource
-                        Glyph="{mi:Fluent BindingContext={x:Reference MainMenuView}, 
+                        Glyph="{mi:Fluent BindingContext={x:Reference MainMenuContentPage}, 
                             Icon=New16, IconColor=White}" />
                 </Button.ImageSource>
             </Button>
@@ -80,7 +80,7 @@
                     TextColor="{Binding MyStyle.ButtonTextColor}">
                 <Button.ImageSource>
                     <FontImageSource
-                        Glyph="{mi:Fluent BindingContext={x:Reference MainMenuView}, 
+                        Glyph="{mi:Fluent BindingContext={x:Reference MainMenuContentPage}, 
                             Icon=Accessibility16, IconColor=White}" />
                 </Button.ImageSource>
             </Button>
@@ -92,7 +92,7 @@
                     TextColor="{Binding MyStyle.ButtonTextColor}">
                 <Button.ImageSource>
                     <FontImageSource
-                        Glyph="{mi:Fluent BindingContext={x:Reference MainMenuView}, 
+                        Glyph="{mi:Fluent BindingContext={x:Reference MainMenuContentPage}, 
                             Icon=Info12, IconColor=White}" />
                 </Button.ImageSource>
             </Button>

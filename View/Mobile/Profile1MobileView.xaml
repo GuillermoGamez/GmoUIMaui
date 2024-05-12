@@ -7,7 +7,7 @@
              x:Class="GmoUIMaui.View.Mobile.Profile1MobileView"
              x:DataType="vm:ProfileViewModel"
              Title="{Binding Title}"
-             x:Name="ProfileView">
+             x:Name="Profile1MobileContentPage">
 
     <Grid RowDefinitions="*, 3*"
           ColumnDefinitions="*">
@@ -54,7 +54,7 @@
                     TextColor="{Binding MyStyle.ButtonTextColor}" >
                 <Button.ImageSource>
                     <FontImageSource
-                        Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                        Glyph="{mi:Fluent BindingContext={x:Reference Profile1MobileContentPage}, 
                             Icon=Fax16, IconColor={Binding MyStyle.LabelTextColor}}" />
                 </Button.ImageSource>
             </Button>
@@ -76,7 +76,7 @@
                         TextColor="{Binding MyStyle.ButtonTextColor}">
                     <Button.ImageSource>
                         <FontImageSource
-                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Glyph="{mi:Fluent BindingContext={x:Reference Profile1MobileContentPage}, 
                             Icon=Gift20, IconColor=White}" />
                     </Button.ImageSource>
                 </Button>
@@ -86,7 +86,7 @@
                         TextColor="{Binding MyStyle.ButtonTextColor}">
                     <Button.ImageSource>
                         <FontImageSource
-                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Glyph="{mi:Fluent BindingContext={x:Reference Profile1MobileContentPage}, 
                             Icon=Camera20, IconColor=White}" />
                     </Button.ImageSource>
                 </Button>
@@ -96,7 +96,7 @@
                         TextColor="{Binding MyStyle.ButtonTextColor}">
                     <Button.ImageSource>
                         <FontImageSource
-                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Glyph="{mi:Fluent BindingContext={x:Reference Profile1MobileContentPage}, 
                             Icon=Clock20, IconColor=White}" />
                     </Button.ImageSource>
                 </Button>
@@ -106,7 +106,7 @@
                         TextColor="{Binding MyStyle.ButtonTextColor}">
                     <Button.ImageSource>
                         <FontImageSource
-                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Glyph="{mi:Fluent BindingContext={x:Reference Profile1MobileContentPage}, 
                             Icon=Airplane20, IconColor=White}" />
                     </Button.ImageSource>
                 </Button>
@@ -116,7 +116,7 @@
                         TextColor="{Binding MyStyle.ButtonTextColor}">
                     <Button.ImageSource>
                         <FontImageSource
-                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Glyph="{mi:Fluent BindingContext={x:Reference Profile1MobileContentPage}, 
                             Icon=Call32, IconColor=White}" />
                     </Button.ImageSource>
                 </Button>
@@ -126,7 +126,7 @@
                         TextColor="{Binding MyStyle.ButtonTextColor}">
                     <Button.ImageSource>
                         <FontImageSource
-                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Glyph="{mi:Fluent BindingContext={x:Reference Profile1MobileContentPage}, 
                             Icon=Diversity24, IconColor=White}" />
                     </Button.ImageSource>
                 </Button>
@@ -139,7 +139,7 @@
                         TextColor="{Binding MyStyle.ButtonTextColor}">
                     <Button.ImageSource>
                         <FontImageSource
-                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Glyph="{mi:Fluent BindingContext={x:Reference Profile1MobileContentPage}, 
                             Icon=Doctor20, IconColor=White}" />
                     </Button.ImageSource>
                 </Button>
