@@ -3,38 +3,102 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:GmoUIMaui.ViewModel"
+             xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
              x:Class="GmoUIMaui.View.MainMenuView"
              x:DataType="vm:MainMenuViewModel"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             x:Name="MainMenuView">
 
-    <Grid RowDefinitions="Auto, *, Auto"
-          ColumnDefinitions="*">
-        <Label Grid.Row="0"
-               Text="Gmo's UI for MAUI"
-               FontSize="Title"
-               HorizontalOptions="Center" />
+    <Grid RowDefinitions="Auto, *, Auto, Auto"
+          ColumnDefinitions="*"
+          RowSpacing="5"
+          Padding="5">
+        <Border Grid.Row="0"
+                Padding="15"
+                Stroke="{Binding MyStyle.BorderColor}"
+                StrokeThickness="3"
+                >
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20" />
+            </Border.StrokeShape>
+            <Label Text="Gmo's UI for MAUI"
+                   FontSize="Title"
+                   HorizontalOptions="Center" 
+                   TextColor="{Binding MyStyle.LabelTextColor}"/>
+        </Border>
 
         <ScrollView Grid.Row="1"
-                    Padding="10">
+                    Padding="5">
             <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto"
                   RowSpacing="10">
-                <Button Grid.Row="0" 
-                        Text="Profile 1"
-                        Command="{Binding GoToProfile1ViewCommand}"/>
-                <Button Grid.Row="1" 
-                        Text="Page 2" />
-                <Button Grid.Row="2" 
-                        Text="Page 3" />
-                <Button Grid.Row="3" 
-                        Text="Page 4" />
-                
-                <Button Grid.Row="4" 
+                <Button Grid.Row="0"
+                        Text="Profile Page 1"
+                        Command="{Binding GoToProfile1ViewCommand}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}"
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"/>
+                <Button Grid.Row="1"
+                        Text="Page 2" 
+                        TextColor="{Binding MyStyle.ButtonTextColor}"
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"/>
+                <Button Grid.Row="2"
+                        Text="Page 3" 
+                        TextColor="{Binding MyStyle.ButtonTextColor}"
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"/>
+                <Button Grid.Row="3"
+                        Text="Page 4" 
+                        TextColor="{Binding MyStyle.ButtonTextColor}"
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"/>
+
+                <Button Grid.Row="4"
                         Text="Go To Temp"
-                        Command="{Binding GoToTempViewCommand}"/>
+                        Command="{Binding GoToTempViewCommand}" 
+                        TextColor="{Binding MyStyle.ButtonTextColor}"
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"/>
             </Grid>
         </ScrollView>
 
-        <Label Grid.Row="2"
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*, *, *"
+              ColumnSpacing="5">
+            <Button Grid.Column="0"
+                    Text="New"
+                    FontSize="Header"
+                    Command="{Binding RandomThemeCommand}"
+                    BackgroundColor="{Binding MyStyle.ButtonBgColor}"
+                    TextColor="{Binding MyStyle.ButtonTextColor}">
+                <Button.ImageSource>
+                    <FontImageSource
+                        Glyph="{mi:Fluent BindingContext={x:Reference MainMenuView}, 
+                            Icon=New16, IconColor=White}" />
+                </Button.ImageSource>
+            </Button>
+            <Button Grid.Column="1"
+                    Text="Default"
+                    FontSize="Header"
+                    Command="{Binding DefaultThemeCommand}"
+                    BackgroundColor="{Binding MyStyle.ButtonBgColor}"
+                    TextColor="{Binding MyStyle.ButtonTextColor}">
+                <Button.ImageSource>
+                    <FontImageSource
+                        Glyph="{mi:Fluent BindingContext={x:Reference MainMenuView}, 
+                            Icon=Accessibility16, IconColor=White}" />
+                </Button.ImageSource>
+            </Button>
+            <Button Grid.Column="2"
+                    Text="Info"
+                    FontSize="Header"
+                    Command="{Binding GetThemeCommand}"
+                    BackgroundColor="{Binding MyStyle.ButtonBgColor}"
+                    TextColor="{Binding MyStyle.ButtonTextColor}">
+                <Button.ImageSource>
+                    <FontImageSource
+                        Glyph="{mi:Fluent BindingContext={x:Reference MainMenuView}, 
+                            Icon=Info12, IconColor=White}" />
+                </Button.ImageSource>
+            </Button>
+        </Grid>
+
+        <Label Grid.Row="3"
                Text="Created by Guillermo Gamez"
                HorizontalOptions="Fill"
                HorizontalTextAlignment="End"

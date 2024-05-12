@@ -2,6 +2,7 @@
 using GmoUIMaui.View.Desktop;
 using GmoUIMaui.View.Mobile;
 using GmoUIMaui.ViewModel;
+using MauiIcons.Fluent;
 using Microsoft.Extensions.Logging;
 
 namespace GmoUIMaui;
@@ -13,6 +14,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseFluentMauiIcons()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

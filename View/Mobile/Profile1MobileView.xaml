@@ -3,90 +3,146 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:GmoUIMaui.ViewModel"
+             xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
              x:Class="GmoUIMaui.View.Mobile.Profile1MobileView"
              x:DataType="vm:ProfileViewModel"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             x:Name="ProfileView">
 
     <Grid RowDefinitions="*, 3*"
-          ColumnDefinitions="*"
-          Padding="5">
+          ColumnDefinitions="*">
 
         <!-- Profile Image and Description -->
         <Grid Grid.Row="0"
-              ColumnDefinitions="*, *">
+              ColumnDefinitions="*, *"
+              BackgroundColor="{Binding MyStyle.GridHeaderBgColor}">
             <Border Grid.Column="0"
                     Margin="15"
-                    Stroke="White"
-                    StrokeThickness="2">
+                    Stroke="{Binding MyStyle.BorderColor}"
+                    StrokeThickness="3"
+                    BackgroundColor="{Binding MyStyle.BorderBgColor}">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="50" />
                 </Border.StrokeShape>
-                <VerticalStackLayout>
-                    <Image Source="dotnet_bot.png" />
-                    <Label Text="Profile Image"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center" />
-                </VerticalStackLayout>
+                <Image Source="dotnet_bot.png" />
             </Border>
             <Grid Grid.Column="1"
                   VerticalOptions="Center"
                   RowDefinitions="Auto, Auto, Auto">
                 <Label Grid.Row="0"
-                       Text="Name" />
+                       Text="Name"
+                       TextColor="{Binding MyStyle.LabelTextColor}" />
                 <Label Grid.Row="1"
-                       Text="Description" />
+                       Text="Description"
+                       TextColor="{Binding MyStyle.LabelTextColor}" />
                 <Label Grid.Row="2"
-                       Text="Other" />
+                       Text="Other"
+                       TextColor="{Binding MyStyle.LabelTextColor}" />
             </Grid>
         </Grid>
 
         <!-- Buttons and My Profile Label -->
         <Grid Grid.Row="1"
               RowDefinitions="*, *, 4*"
-              RowSpacing="15">
+              RowSpacing="15"
+              Padding="5"
+              BackgroundColor="{Binding MyStyle.GridBodyBgColor}">
             <Button Grid.Row="0" Text="New Theme"
+                    FontSize="Header"
                     Command="{Binding RandomThemeCommand}"
-                    BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
-                    TextColor="{Binding MyStyle.ButtonTextColor}" />
+                    BackgroundColor="{Binding MyStyle.ButtonBgColor}"
+                    TextColor="{Binding MyStyle.ButtonTextColor}" >
+                <Button.ImageSource>
+                    <FontImageSource
+                        Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Icon=Fax16, IconColor={Binding MyStyle.LabelTextColor}}" />
+                </Button.ImageSource>
+            </Button>
             <Label Grid.Row="1"
                    Text="My Profile"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
-                   FontSize="Title" />
+                   FontSize="Title"
+                   TextColor="{Binding MyStyle.LabelTextColor}" />
             <Grid Grid.Row="2"
                   RowDefinitions="*, *, *, *"
                   ColumnDefinitions="*, *"
                   ColumnSpacing="5"
                   RowSpacing="5">
                 <Button Grid.Row="0" Grid.Column="0"
-                        Text="Your Hours"
-                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
-                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                        Text="Default Theme"
+                        Command="{Binding DefaultThemeCommand}"
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Icon=Gift20, IconColor=White}" />
+                    </Button.ImageSource>
+                </Button>
                 <Button Grid.Row="0" Grid.Column="1"
                         Text="Certifications"
-                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
-                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Icon=Camera20, IconColor=White}" />
+                    </Button.ImageSource>
+                </Button>
                 <Button Grid.Row="1" Grid.Column="0"
                         Text="Request Time Off"
-                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
-                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Icon=Clock20, IconColor=White}" />
+                    </Button.ImageSource>
+                </Button>
                 <Button Grid.Row="1" Grid.Column="1"
                         Text="Saved Videos"
-                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
-                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Icon=Airplane20, IconColor=White}" />
+                    </Button.ImageSource>
+                </Button>
                 <Button Grid.Row="2" Grid.Column="0"
                         Text="New Action"
-                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
-                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Icon=Call32, IconColor=White}" />
+                    </Button.ImageSource>
+                </Button>
                 <Button Grid.Row="2" Grid.Column="1"
                         Text="Receive"
-                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
-                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Icon=Diversity24, IconColor=White}" />
+                    </Button.ImageSource>
+                </Button>
 
                 <Button Grid.Row="3" Grid.ColumnSpan="2"
-                        Text="Clock In"
-                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
-                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                        Text="Get Theme Information"
+                        FontSize="Header"
+                        Command="{Binding GetThemeCommand}"
+                        BackgroundColor="{Binding MyStyle.ButtonBgColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            Glyph="{mi:Fluent BindingContext={x:Reference ProfileView}, 
+                            Icon=Doctor20, IconColor=White}" />
+                    </Button.ImageSource>
+                </Button>
             </Grid>
         </Grid>
     </Grid>
