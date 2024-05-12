@@ -2,9 +2,9 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:GmoUIMaui.View"
+             xmlns:vm="clr-namespace:GmoUIMaui.ViewModel"
              x:Class="GmoUIMaui.View.MainMenuView"
-             x:DataType="vm:MainMenuView"
+             x:DataType="vm:MainMenuViewModel"
              Title="{Binding Title}">
 
     <Grid RowDefinitions="Auto, *, Auto"
@@ -16,16 +16,21 @@
 
         <ScrollView Grid.Row="1"
                     Padding="10">
-            <Grid RowDefinitions="Auto, Auto, Auto, Auto"
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto"
                   RowSpacing="10">
                 <Button Grid.Row="0" 
-                        Text="Page 1" />
+                        Text="Profile 1"
+                        Command="{Binding GoToProfile1ViewCommand}"/>
                 <Button Grid.Row="1" 
                         Text="Page 2" />
                 <Button Grid.Row="2" 
                         Text="Page 3" />
                 <Button Grid.Row="3" 
                         Text="Page 4" />
+                
+                <Button Grid.Row="4" 
+                        Text="Go To Temp"
+                        Command="{Binding GoToTempViewCommand}"/>
             </Grid>
         </ScrollView>
 

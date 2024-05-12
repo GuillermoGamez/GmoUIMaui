@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:GmoUIMaui.ViewModel"
+             x:Class="GmoUIMaui.View.Mobile.Profile1MobileView"
+             x:DataType="vm:ProfileViewModel"
+             Title="{Binding Title}">
+
+    <Grid RowDefinitions="*, 3*"
+          ColumnDefinitions="*"
+          Padding="5">
+
+        <!-- Profile Image and Description -->
+        <Grid Grid.Row="0"
+              ColumnDefinitions="*, *">
+            <Border Grid.Column="0"
+                    Margin="15"
+                    Stroke="White"
+                    StrokeThickness="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="50" />
+                </Border.StrokeShape>
+                <VerticalStackLayout>
+                    <Image Source="dotnet_bot.png" />
+                    <Label Text="Profile Image"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+                </VerticalStackLayout>
+            </Border>
+            <Grid Grid.Column="1"
+                  VerticalOptions="Center"
+                  RowDefinitions="Auto, Auto, Auto">
+                <Label Grid.Row="0"
+                       Text="Name" />
+                <Label Grid.Row="1"
+                       Text="Description" />
+                <Label Grid.Row="2"
+                       Text="Other" />
+            </Grid>
+        </Grid>
+
+        <!-- Buttons and My Profile Label -->
+        <Grid Grid.Row="1"
+              RowDefinitions="*, *, 4*"
+              RowSpacing="15">
+            <Button Grid.Row="0" Text="New Theme"
+                    Command="{Binding RandomThemeCommand}"
+                    BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
+                    TextColor="{Binding MyStyle.ButtonTextColor}" />
+            <Label Grid.Row="1"
+                   Text="My Profile"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="Title" />
+            <Grid Grid.Row="2"
+                  RowDefinitions="*, *, *, *"
+                  ColumnDefinitions="*, *"
+                  ColumnSpacing="5"
+                  RowSpacing="5">
+                <Button Grid.Row="0" Grid.Column="0"
+                        Text="Your Hours"
+                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                <Button Grid.Row="0" Grid.Column="1"
+                        Text="Certifications"
+                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                <Button Grid.Row="1" Grid.Column="0"
+                        Text="Request Time Off"
+                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                <Button Grid.Row="1" Grid.Column="1"
+                        Text="Saved Videos"
+                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                <Button Grid.Row="2" Grid.Column="0"
+                        Text="New Action"
+                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+                <Button Grid.Row="2" Grid.Column="1"
+                        Text="Receive"
+                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+
+                <Button Grid.Row="3" Grid.ColumnSpan="2"
+                        Text="Clock In"
+                        BackgroundColor="{Binding MyStyle.ButtonBackGroundColor}"
+                        TextColor="{Binding MyStyle.ButtonTextColor}" />
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

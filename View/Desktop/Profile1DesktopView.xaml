@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:GmoUIMaui.ViewModel"
+             x:Class="GmoUIMaui.View.Desktop.Profile1DesktopView"
+             x:DataType="vm:ProfileViewModel"
+             Title="{Binding Title}">
+    
+    <Label Text="Desktop Profile 1" />
+</ContentPage>
